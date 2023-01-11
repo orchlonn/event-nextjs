@@ -18,10 +18,50 @@ export default function Home() {
       <header>
         <nav>
           <img src="" alt="" />
+          <a href="/">Home</a>
+          <a href="/events">Events</a>
+          <a href="/about-us">About us</a>
         </nav>
       </header>
 
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <a href="">
+          <img src="" alt="" />
+          <h2>Events in Mongolia</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio hic
+            assumenda veniam? Asperiores unde ab possimus alias cum aliquid,
+            temporibus qui optio non, doloremque, dignissimos laboriosam omnis
+            adipisci soluta magni.
+          </p>
+        </a>
+
+        <a href="">
+          <img src="" alt="" />
+          <h2>Events in Seattle</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio hic
+            assumenda veniam? Asperiores unde ab possimus alias cum aliquid,
+            temporibus qui optio non, doloremque, dignissimos laboriosam omnis
+            adipisci soluta magni.
+          </p>
+        </a>
+
+        <a href="">
+          <img src="" alt="" />
+          <h2>Events in Seoul</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio hic
+            assumenda veniam? Asperiores unde ab possimus alias cum aliquid,
+            temporibus qui optio non, doloremque, dignissimos laboriosam omnis
+            adipisci soluta magni.
+          </p>
+        </a>
+      </main>
+
+      {/* <footer>
+        <p>2023</p>
+      </footer> */}
     </>
   );
 }
