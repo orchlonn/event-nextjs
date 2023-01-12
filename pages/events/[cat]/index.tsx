@@ -1,7 +1,7 @@
-const Page = () => {
+const EventsCatPage = () => {
   return (
     <div>
-      <h1>Events in London</h1>
+      <h1>Events in Seattle</h1>
       <a href="/events/event1">Event 1</a>
       <a href="/events/event2">Event 2</a>
       <a href="/events/event3">Event 3</a>
@@ -12,4 +12,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default EventsCatPage;
