@@ -27,40 +27,11 @@ export default function Home(props: any) {
       <main className={styles.main}>
         {props.data.map((ev: any) => (
           <a href={`/events/${ev.id}`} key={ev.id}>
-            <Image src={ev.image} width="500" height="300" alt="images" />
+            <Image src={ev.image} width="300" height={"300"} alt={ev.title} />
+            <h2>{ev.title}</h2>
+            <p>{ev.description}</p>
           </a>
         ))}
-
-        <a href="events/Mongolia">
-          <img src="" alt="" />
-          <h2>Events in Mongolia</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio hic
-            assumenda veniam? Asperiores unde ab possimus alias cum aliquid,
-            temporibus qui optio non, doloremque, dignissimos laboriosam omnis
-            adipisci soluta magni.
-          </p>
-        </a>
-        <a href="events/Seattle">
-          <img src="" alt="" />
-          <h2>Events in Seattle</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio hic
-            assumenda veniam? Asperiores unde ab possimus alias cum aliquid,
-            temporibus qui optio non, doloremque, dignissimos laboriosam omnis
-            adipisci soluta magni.
-          </p>
-        </a>
-        <a href="events/Seoul">
-          <img src="" alt="" />
-          <h2>Events in Seoul</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio hic
-            assumenda veniam? Asperiores unde ab possimus alias cum aliquid,
-            temporibus qui optio non, doloremque, dignissimos laboriosam omnis
-            adipisci soluta magni.
-          </p>
-        </a>
       </main>
 
       {/* <footer>
@@ -70,9 +41,8 @@ export default function Home(props: any) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
   const { events_categories } = await import("../data/data.json");
-  // console.log(events_categories);
 
   return {
     props: {
