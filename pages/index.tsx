@@ -18,19 +18,25 @@ export default function Home(props: any) {
 
       <header>
         <nav>
-          <Link href="/">Home</Link>
-          <Link href="/events">Events</Link>
-          <Link href="/about-us">About us</Link>
+          <Link href="/" passHref>
+            Home
+          </Link>
+          <Link href="/events" passHref>
+            Events
+          </Link>
+          <Link href="/about-us" passHref>
+            About us
+          </Link>
         </nav>
       </header>
 
       <main className={styles.main}>
         {props.data.map((ev: any) => (
-          <a href={`/events/${ev.id}`} key={ev.id}>
+          <Link href={`/events/${ev.id}`} key={ev.id}>
             <Image src={ev.image} width="300" height={"300"} alt={ev.title} />
             <h2>{ev.title}</h2>
             <p>{ev.description}</p>
-          </a>
+          </Link>
         ))}
       </main>
 

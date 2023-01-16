@@ -1,17 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const EventsCatPage = (data: any) => {
-  console.log(data, "dataatatata");
+const EventsCatPage = (props: any) => {
   return (
     <div>
-      <h1>Events in Barcelona</h1>
+      <h1>Events in {props.pageName}</h1>
       <div>
-        {data.data.map((ev: any) => (
-          <a href={`events/${ev.city}/${ev.id}`} key={ev.id}>
+        {props.data.map((ev: any) => (
+          <Link href={`${ev.city}/${ev.id}`} key={ev.id} passHref>
             <Image src={ev.image} width="300" height={"300"} alt={ev.title} />
             <h2>{ev.title}</h2>
             <p>{ev.description}</p>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
@@ -38,9 +38,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const id = context?.params.cat;
-  const { allEvents } = await import("../../../data/data.json");
 
+  const { allEvents } = await import("../../../data/data.json");
   const data = allEvents.filter((ev) => ev.city === id);
 
-  return { props: { data } };
+  return { props: { data, pageName: id } };
 }
