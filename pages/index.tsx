@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
-import Link from "next/link";
+import { HomePage } from "../src/components/home/home-page";
+import { Footer } from "../src/components/footer/footer";
+import { Header } from "../src/components/header/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,33 +16,8 @@ export default function Home(props: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-        <nav>
-          <Link href="/" passHref>
-            Home
-          </Link>
-          <Link href="/events" passHref>
-            Events
-          </Link>
-          <Link href="/about-us" passHref>
-            About us
-          </Link>
-        </nav>
-      </header>
-
-      <main className={styles.main}>
-        {props.data.map((ev: any) => (
-          <Link href={`/events/${ev.id}`} key={ev.id}>
-            <Image src={ev.image} width="300" height={"300"} alt={ev.title} />
-            <h2>{ev.title}</h2>
-            <p>{ev.description}</p>
-          </Link>
-        ))}
-      </main>
-
-      {/* <footer>
-        <p>2023</p>
-      </footer> */}
+      {/* home page section */}
+      <HomePage props={props} />
     </>
   );
 }
