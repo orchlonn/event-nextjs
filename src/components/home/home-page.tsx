@@ -3,14 +3,18 @@ import Image from "next/image";
 
 export const HomePage = ({ props }: { props: any }) => {
   return (
-    <main>
+    <div className="home_body">
       {props.data.map((ev: any) => (
-        <Link href={`/events/${ev.id}`} key={ev.id}>
-          <Image src={ev.image} width="300" height={"300"} alt={ev.title} />
-          <h2>{ev.title}</h2>
-          <p>{ev.description}</p>
+        <Link className="card" href={`/events/${ev.id}`} key={ev.id}>
+          <div className="image">
+            <Image src={ev.image} width="300" height={"300"} alt={ev.title} />
+          </div>
+          <div className="content">
+            <h2>{ev.title}</h2>
+            <p>{ev.description}</p>
+          </div>
         </Link>
       ))}
-    </main>
+    </div>
   );
 };

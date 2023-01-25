@@ -1,0 +1,59 @@
+header 
+	height: 300px
+	padding: 20px
+	background: linear-gradient(305deg, #dbfff3, transparent)
+
+	>div
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+
+
+	.topNav
+		display: flex
+		justify-content: space-between
+		align-content: center
+		ul
+			display: flex
+			box-decoration: none
+			list-style: none
+			gap: 15px 
+			li
+				font-weight: 600
+				font-size: 16px
+	h1
+		width: 50%
+		font-size: 60px
+		text-transform: uppercase
+
+footer
+	background: #333
+	color: #fff
+	padding: 10px
+	text-align: center 
+
+main
+	width: 100%
+	max-width: 1450px
+	margin: auto
+	padding: 30px
+
+.home_body
+	display: flex
+	flex-direction: column
+	gap: 50px
+
+	.image
+		width: 40%
+
+	.card
+		display: flex
+		flex-direction: row
+		gap: 30px
+		justify-content: center
+		align-items: center
+		&:nth-child(odd)
+			direction: rtl
+			
+		.content
+			width: 50%
